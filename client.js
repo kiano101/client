@@ -16,14 +16,14 @@ socket.on("chat history", (messages) => {
   });
 });
 
-//load all the private messages
+// load all the private messages
 socket.on("private chat history", (messages) => {
   messages.forEach(({ sender, message, timestamp }) => {
     addPrivateMessageToChat(sender, message, timestamp);
   });
 });
 
-//handles incoming private messages
+// handles incoming private messages
 socket.on("recieve private message", ({ from, message, timestamp }) => {
   addPrivateMessageToChat(from, message, timestamp);
 });
