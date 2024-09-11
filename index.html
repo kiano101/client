@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="./images/chat (1).png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div id="alert-container"></div>
+    <div class="s1">
+        <div class="login-container" id="login-container">
+            <h2>Login</h2><br>
+            <div class="auth-form input-group mb-3">
+                <input type="email" class="input-group-text" id="loginEmail" placeholder="Enter email" value="test@gmail.com" />
+                <input type="password" class="input-group-text" id="loginPassword" placeholder="Enter password" value="test" /><br>
+                <button id="loginBtn" class="btn">Login</button><br>
+                <button id="regBtn" class="btn">Register</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Register Form -->
+    <div id="alert-container"></div>
+    <div class="s2">
+        <div class="register-container" id="register-container">
+            <h2>Register</h2><br>
+            <div class="auth-form input-group mb-3">
+                <input type="text" class="input-group-text" id="registerUsername" placeholder="Enter username" />
+                <input type="email" class="input-group-text" id="registerEmail" placeholder="Enter email" />
+                <input type="password" class="input-group-text" id="registerPassword" placeholder="Enter password" /><br>
+                <button id="registerBtn" class="btn">Register</button><br>
+                <button id="logBtn" class="btn">Login</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Home -->
+     <div id="alert-container"></div>
+     <div class="s3">
+        <div class="home-container" id="home-container">
+            <input type="image" src="/images/left.png" id="backBtn-login" class="backBtn"><h2>Home</h2><br>
+            <button id="privateChatBtn" class="btn">Private Chat</button><br><br>
+            <button id="groupChatBtn" class="btn">Group Chat</button>
+        </div>
+     </div>
+
+     <!-- Home Private -->
+     <div id="alert-container"></div>
+     <div class="s4">
+        <div class="private-home-container" id="private-home-container">
+            <input type="image" src="/images/left.png" id="backBtn-home-private" class="backBtn"><h2>All Connected Users</h2><br>
+            <div id="allUsers"></div>
+        </div>
+     </div>
+
+
+     <!-- Private Chat App -->
+    <div class="s5">
+        <div class="private-chat-container" id="private-chat-container">
+            <input type="image" src="/images/left.png" id="backBtn-prvt" class="backBtn"><h2>Web Chat</h2><br>
+            <!-- <button id="logoutBtn" class="btn">Logout</button><br><br> -->
+            <p id="privateChatRecipient"></p>
+            <div id="privateMessages" class="messages"></div>
+            <div class="chat-input input-group">
+                <input type="text" class="input-group-text" id="privateMessageInput" placeholder="Type a message..." autocomplete="off" />
+                <button id="prvtSendBtn" class="btn">Send</button>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Group Chat App -->
+    <div class="s6">
+        <div class="chat-container" id="chat-container">
+            <input type="image" src="/images/left.png" id="backBtn-grp-home" class="backBtn"><h2>Web Chat</h2><br>
+            <button id="logOutBtn" class="btn">Logout</button><br><br>
+            <div id="messages-grp" class="messages"></div>
+            <div class="chat-input input-group">
+                <input type="text" class="input-group-text" id="messageInput" placeholder="Type a message..." autocomplete="off" />
+                <button id="sendBtn" class="btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+
+</body>
+</html>
